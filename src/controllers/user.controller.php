@@ -7,8 +7,8 @@ class UserController{
     }
     public function login($email, $password){
         $user = $this->userService->findByEmail($email);
-        if(!$user) return false;
-        if($user->password !== $password) return false;
-        return true;
+        if(!$user) return null;
+        if($user->password !== $password) return null;
+        return $user;
     }
 }

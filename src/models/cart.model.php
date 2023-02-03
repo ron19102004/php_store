@@ -1,9 +1,9 @@
 <?php
 class CartModel{
-    private $id;
-    private $id_user;
-    private $created_at;
-    private $update_at;
+    public $id;
+    public $id_user;
+    public $created_at;
+    public $update_at;
     function __construct($id,$id_user,$created_at,$update_at)
     {
         $this->id = $id;

@@ -1,12 +1,12 @@
 <?php
 class ProductModel{
-    private $id;
-    private $name;
-    private $slug;
-    private $price;
-    private $description;
-    private $url_img;
-    private $id_category;
+    public $id;
+    public $name;
+    public $slug;
+    public $price;
+    public $description;
+    public $url_img;
+    public $id_category;
     function __construct($id, $name, $slug, $price, $description, $url_img, $id_category){
         $this->id = $id;
         $this->name = $name;

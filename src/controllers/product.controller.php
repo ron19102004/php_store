@@ -12,6 +12,8 @@ class ProductController{
     public function findByCategory($id_category){
         return $this->productService->findByCategory($id_category);
     }
+    public function navigate($page){
+        $from =($page * 30) - 30;
+        return $this->productService->navigate($from);
+    }
 }
-$u = new ProductController();
-print_r($u->findAll());

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+$font1: 'Metrophobic', sans-serif;
+$fontInter: 'Inter', sans-serif;
+$color0: #EEF2E6;
+$color1: #B50606;
+$color2: #D6CDA4;
+$color4: #1C6758;
+
+footer {
+    width: 100%;
+    height: 119px;
+    background-color: $color0;
+    position: relative;
+
+    .footer-brand {
+        background-color: $color4;
+        display: flex;
+        justify-content: space-around;
+        justify-items: center;
+        position: absolute;
+        width: calc(100% - 100px);
+        height: 37px;
+        border: 0;
+        top: 2.7rem;
+        left: 3rem;
+        border-radius: 4px;
+
+        .contact {
+            display: flex;
+
+            a {
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                padding-right: 5px;
+            }
+
+            h5 {
+                padding: 7px 20px 0 0;
+                color: white;
+                font-family: $fontInter;
+                font-size: 17px;
+            }
+        }
+
+        h5 {
+            padding: 7px 0 0 20px;
+            color: white;
+            font-family: $fontInter;
+            font-size: 17px;
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        .footer-brand {
+            top: 1.6rem;
+            flex-direction: column;
+            height: 70px;
+            .contact{
+                padding-left: 23px;
+            }
+        }
+    }
+}

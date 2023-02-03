@@ -17,8 +17,7 @@ class DatabaseConfig
                 $this->PASSWORD
             );
             $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if ($this->connect !== null)  echo "< Connected successfully >";
-            else echo "Failed to connect";
+            if ($this->connect == null)  echo "< ERROR DATABASE CONNECTION >";
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }

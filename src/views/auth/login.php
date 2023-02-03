@@ -1,14 +1,21 @@
 <?php
 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . "/src/controllers/user.controller.php");
+require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . "/src/controllers/user_details.controller.php");
 session_start();
 $userController = new UserController();
+$userDetailsController = new UserDetailsController();
 if (isset($_POST['submit'])) {
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
-    $check = $userController->login($email, $password);
-    if ($check) {
+    $user = $userController->login($email, $password);
+    if ($user) {
         $_SESSION['email'] = $email;
-        header("Location: ../components/dashboard.php");
+        $user_details = $userDetailsController->findByIdUser($user->id);
+        if ($user_details) {
+            $_SESSION['avatar_user']=$user_details->url_img_profile;
+            $_SESSION['user_name'] = $user_details-> first_name .' '. $user_details->last_name;
+            header("Location: ../components/homepage.php");
+        }
     } else echo "login failed";
 }
 ?>
@@ -19,6 +26,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <title>Đăng nhập - Ron Store</title>
 </head>
 <body>
@@ -26,7 +34,7 @@ if (isset($_POST['submit'])) {
         <div class="container text-center" id="container">
             <div class="row">
                 <div class="col" id="brand">
-                    <img src="../assets/images/icons8-r-100.png" alt="logo" width="80">
+                    <img src="../assets/images/icons8-r-100.png" alt="logo" width="80" href = "../components/homepage.php">
                     <h1>RON STORE</h1>
                 </div>
                 <div class="col" id="help">
@@ -65,17 +73,7 @@ if (isset($_POST['submit'])) {
             </p>
         </div>
     </main>
-    <footer>
-        <div class="footer-brand">
-            <div class="contact">
-                <h5>Liên hệ : </h5>
-                <a href=""><img src="../assets/images/icons8-facebook-100 (5).png" alt="fb"></a>
-                <a href=""><img src="../assets/images/icons8-instagram-100 (1).png" alt="ig"></a>
-                <a href=""><img src="../assets/images/icons8-mail-100 (1).png" alt="e"></a>
-            </div>
-            <h5>© Copyright - Designed By Ron</h5>
-        </div>
-    </footer>
+    <?php include("../components/footer.php");?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

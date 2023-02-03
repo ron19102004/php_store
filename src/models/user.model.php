@@ -8,7 +8,4 @@ class UserModel {
         $this->email = $email;
         $this->password = $password;
     }
-    public function getId(){
-        return $this->id;
-    }
 }

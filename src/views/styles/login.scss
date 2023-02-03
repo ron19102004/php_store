@@ -23,6 +23,7 @@ header {
         #brand {
             pointer-events: none;
             display: flex;
+
             img {
                 width: 80px;
                 height: auto;
@@ -32,7 +33,6 @@ header {
             }
 
             h1 {
-                pointer-events: none;
                 padding-top: 16px;
                 padding-left: 15px;
                 font-style: normal;
@@ -107,33 +107,33 @@ main {
             font-family: $fontInter;
         }
 
-        .group-input {
-            position: relative;
-            padding-bottom: 14px;
-            padding-top: 14px;
+            .group-input {
+                position: relative;
+                padding-bottom: 14px;
+                padding-top: 14px;
 
-            input {
-                width: 363px;
-                height: 45px;
-                border-radius: 6px;
-                border: 0;
-                background-color: $color0;
-                transition: all 0.3s ease-in-out;
-            }
+                input {
+                    width: calc(80% - 20px);
+                    height: 45px;
+                    border-radius: 6px;
+                    border: 0;
+                    background-color: $color0;
+                    transition: all 0.3s ease-in-out;
+                }
 
-            label {
-                position: absolute;
-                pointer-events: none;
-                padding: inherit;
-                top: 10px;
-                color: #9E8C37;
-                width: 10rem;
-                font-size: 16px;
-                transform: translateX(-23rem);
-                transition: all 0.3s ease-in-out;
-                font-family: $fontInter;
+                label {
+                    position: absolute;
+                    pointer-events: none;
+                    padding: inherit;
+                    top: 10px;
+                    color: #9E8C37;
+                    width: 10rem;
+                    font-size: 16px;
+                    transform: translateX(-23.8rem);
+                    transition: all 0.3s ease-in-out;
+                    font-family: $fontInter;
+                }
             }
-        }
 
         .submit {
             margin-top: 2rem;
@@ -154,7 +154,7 @@ main {
             padding-top: 18px;
 
             label {
-                transform: translateX(-24rem);
+                transform: translateX(-24.7rem);
             }
         }
 
@@ -188,48 +188,68 @@ main {
     top: -18px;
     font-size: 12px;
     color: white;
-    transform: translateX(-24rem);
+    transform: translateX(-24.3rem);
 }
 
-footer {
-    width: 100%;
-    height: 119px;
-    background-color: $color0;
-    position: relative;
-    .footer-brand {
-        background-color: $color4;
-        display: flex;
-        justify-content: space-around;
-        justify-items: center;
-        position: absolute;
-        width: calc(100% - 100px);
-        height: 37px;
-        border: 0;
-        top: 2.7rem;
-        left: 3rem;
-        border-radius: 4px;
-        .contact {
-            display: flex;
-            a{
+@media screen and (max-width:768px) {
+    header {
+        #container {
+            #brand {
                 img {
-                    width: 35px;
-                    height: 35px;
+                    width: 50px;
+                    height: 50px;
+                    margin: auto;
                 }
-                padding-right: 5px;
+
+                h1 {
+                    font-size: 18px;
+                    margin: auto;
+                }
             }
-            h5{
-                padding: 7px 20px 0 0;
-                color: white;
-                font-family: $fontInter;
-                font-size: 17px;
+
+            #help {
+                h6 {
+                    padding-top: 24px;
+                    padding-left: 60%;
+                }
             }
         }
-        h5{
-            padding: 7px 0 0 20px;
-            color: white;
-            font-family: $fontInter;
-            font-size: 17px;
+    }
+
+    main {
+        #pic5 {
+            left: 0;
+            width: 100px;
+            height: auto;
         }
 
+        #pic2 {
+            display: none;
+        }
+        .form-login {
+            left: 10px;
+            width: calc(100% - 20px);
+
+            .group-input {
+                label {
+                    transform: translateX(-18rem);
+                }
+            }
+
+            #input-email {
+                label {
+                    transform: translateX(-19rem);
+                }
+            }
+        }
+
+    }
+
+    #input-password input:focus+label,
+    #input-password input:valid+label {
+        top: -18px;
+        font-size: 12px;
+        color: white;
+        transform: translateX(-18.4rem);
     }
 }

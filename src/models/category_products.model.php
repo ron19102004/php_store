@@ -1,10 +1,10 @@
 <?php
 class CategoryProductModel{
-    private $id;
-    private $name;
-    private $slug;
-    private $description;
-    private $url_img;
+    public $id;
+    public $name;
+    public $slug;
+    public $description;
+    public $url_img;
     function __construct($id, $name, $slug, $description, $url_img){
         $this->id = $id;
         $this->name = $name;

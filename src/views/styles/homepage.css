@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(60rad, #1C6758, #D6CDA4);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: linear-gradient(60rad, #D6CDA4, #1C6758);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  background: #1C6758;
+  justify-items: center;
+  width: 100%;
+  height: 60px;
+}
+header .brand {
+  display: flex;
+  margin-left: 15px;
+}
+header .brand img {
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+header .brand h1 {
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  padding-left: 10px;
+}
+header form {
+  margin: auto;
+}
+header form .search {
+  position: relative;
+}
+header form .search .group-input {
+  position: relative;
+}
+header form .search .group-input label {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+header form .search .group-input input {
+  width: 520px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: #EEF2E6;
+  border: 0;
+}
+header form .search button {
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  width: 51px;
+  height: 30px;
+  background: #8ACF00;
+  border-radius: 6px;
+  border: 0;
+}
+header .cart {
+  border: 0;
+  width: 45px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  margin-right: 15px;
+}
+header .cart img {
+  width: 45px;
+  height: 45px;
+  margin: auto;
+}
+
+.search .group-input input:focus + label,
+.search .group-input input:valid + label {
+  opacity: 0;
+}
+
+main {
+  display: flex;
+}
+main .side-bar {
+  margin: 10px auto;
+  flex-basis: 17%;
+  width: 250px;
+  height: 638px;
+  background: #1C6758;
+  border: 0;
+  border-radius: 27px;
+}
+main .side-bar .login-register {
+  box-sizing: border-box;
+  width: 221px;
+  height: 50px;
+  background: #3D8361;
+  border: 0.5px solid #D6CDA4;
+  border-radius: 10px;
+  display: flex;
+  margin: 15px auto;
+}
+main .side-bar .login-register img {
+  box-sizing: border-box;
+  width: 35px;
+  height: 36.19px;
+  margin: auto;
+}
+main .side-bar .login-register #img_after_login {
+  box-sizing: border-box;
+  width: 35px;
+  height: 36.19px;
+  margin: auto;
+  border: 0;
+  border-radius: 6px;
+}
+main .side-bar .login-register h3 {
+  color: #D6CDA4;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  border: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+main .side-bar .login-register h3 a {
+  color: #D6CDA4;
+  text-decoration: none;
+}
+main .side-bar .function {
+  margin: auto;
+  width: 221px;
+  height: 317.33px;
+  background: #D9D9D9;
+  border-radius: 10px;
+  border: 0;
+}
+main .side-bar .function .group-item {
+  padding-top: 6px;
+}
+main .side-bar .function .group-item .item {
+  margin: 10px auto;
+  width: 199px;
+  height: 40px;
+  border: 0;
+  background: #D6CDA4;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+main .side-bar .function .group-item .item img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-left: 7px;
+}
+main .side-bar .function .group-item .item a {
+  position: absolute;
+  top: 12.5px;
+  padding-left: 10px;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #1C6758;
+  text-decoration: none;
+}
+main .content {
+  margin: 10px auto;
+  flex-basis: 80%;
+  width: 100%;
+  height: 638px;
+  background: #EEF2E6;
+  border-radius: 30px;
+}
+main .content .products {
+  margin: 15px auto;
+  height: 600px;
+  padding-left: 20px;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+}
+main .content .products .card {
+  display: inline-table;
+  margin: 5px;
+  width: 17rem;
+  cursor: pointer;
+}
+main .content .products .card .card-body button {
+  background-color: #1C6758;
+}
+
+.products::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: linear-gradient(60rad, #1C6758, #D6CDA4);
+  border: 0;
+  border-radius: 10px;
+}
+
+.products::-webkit-scrollbar {
+  width: 10px;
+  background: linear-gradient(60rad, #D6CDA4, #1C6758);
+  border: 0;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=homepage.css.map */
